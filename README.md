@@ -4,13 +4,11 @@ Source code of the "Evolutionary Clustering Algorithm using Classifiers" (ECAC),
 ECAC is avaible in this repository in a Python implementation.
 
 # Installation and run using Python
-Open your prefered python interface and follow this commands to generate a clustering using ECAC-
+Open your prefered python interface and follow this commands to generate a clustering using ECAC.
+**Important**: You will need to have previously installed some basic data science packages such as numpy, pandas and scikit-learn.
 
-### Important:
-You will need to have previously installed some basic data science packages such as numpy, pandas and scikit-learn.
-
-from gen import *
-from retr import *
+``>>> from gen import *``
+``>>> from retr import *``
 n, X, _ = data_retrieval('iris') # dataset 
 solution = ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, p_mutation=0.98) #
     
