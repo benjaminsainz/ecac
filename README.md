@@ -4,13 +4,13 @@ Source code of the "Evolutionary Clustering Algorithm using Classifiers" (ECAC),
 ECAC is avaible in this repository in a Python implementation.
 
 # Algorithm parameters
-``data``: a string with the name of the dataset used for naming the output file.
-``X``: array containing the dataset features with no header. Each row must belong to one individual with one column per feature.
-``n_clusters``: int with the number of desider clusters.
-``max_gens`` (default = 100): maximum generations in the evolutionary process.
-``pop_size`` (default = 100): population size that is carried along the evolutionary process.
-``p_crossover`` (default = 0.95): probability of running the crossover operator.
-``p_mutation`` (default = 0.98): probability of running the mutation operator.
+``data``: a string with the name of the dataset used for naming the output file.  
+``X``: array containing the dataset features with no header. Each row must belong to one individual with one column per feature.  
+``n_clusters``: int with the number of desider clusters.  
+``max_gens`` (default = 100): maximum generations in the evolutionary process.  
+``pop_size`` (default = 100): population size that is carried along the evolutionary process.  
+``p_crossover`` (default = 0.95): probability of running the crossover operator.  
+``p_mutation`` (default = 0.98): probability of running the mutation operator.  
 
 ### Data retrieval function
 An additional data retrieval function is included for easy access and generation of the parameters X, clusters, and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features and the dataset's number of reference classes (n_clusters). To run it on Python and get the information of the *wine* dataset, run these commands in the interface.
