@@ -20,7 +20,7 @@ An additional data retrieval function is included for easy access and generation
 The provided datasets in the ``/data`` path (therefore the options to run the data_retrieval function) are breast-tissue, ecoli, forest, glass, iris, knowledge, segment, spambase, transfusion, and wine. Label files are included for every dataset for any desired benchmarking tests.
 
 # Setup and run using Python
-Open your preferred Python interface and follow these commands to generate a clustering using ECAC. To execute it, just import the functions in gen.py and run ecac_run() with all of its parameters. See the example code below, which follows the data, n_clusters, and X variables set previously for the *wine* dataset.  
+Open your preferred Python interface and follow these commands to generate a clustering using ECAC. To execute it, just import the functions in *gen.py* and run ``ecac_run()`` with all of its parameters. See the example code below, which follows the data, n_clusters, and X variables set previously for the *wine* dataset.  
 **Important**: You will need to have previously installed some basic data science packages such as numpy, pandas, and scikit-learn.
 
 ``>>> from gen import *``  
