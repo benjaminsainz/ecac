@@ -15,7 +15,7 @@ ECAC is avaible in this repository in a Python implementation.
 ### Data retrieval function
 An additional data retrieval function is included for easy access and generation of the parameters X, clusters, and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features and the dataset's number of reference classes (n_clusters). To run it on Python and get the information of the *wine* dataset, run these commands in the interface.  
 ``>>> from retr import *``  
-``data, n_clusters, X, _ = data_retrieval('wine')``  
+``>>> data, n_clusters, X, _ = data_retrieval('wine')``  
 
 The provided datasets in the ``/data`` path (therefore the options to run the data_retrieval function) are: breast-tissue, ecoli, forest, glass, iris, knowledge, segment, spambase, transfusion, and wine. Label files are included for every dataset for any desired benchmarking tests.
 
@@ -24,6 +24,6 @@ Open your prefered python interface and follow this commands to generate a clust
 **Important**: You will need to have previously installed some basic data science packages such as numpy, pandas and scikit-learn.
 
 ``>>> from gen import *``  
-``solution = ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, p_mutation=0.98)``  
+``>>> solution = ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, p_mutation=0.98)``  
 
 Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 100 generations, 100 individuals per population and probabilities of running the crossover and mutation operators of 0.95 and 0.98. A dictionary is returned containing an array with the partition, the solution's fitness and the run time for getting the solution and a .csv file is stores in the ``/ecac-out`` path with the test information and output.
