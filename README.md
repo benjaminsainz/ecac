@@ -5,7 +5,7 @@ ECAC is available in this repository in a Python implementation.
 
 # Algorithm parameters
 ``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
-``X``: an array containing the dataset features with no header. Each row must belong to one individual with one column per feature.  
+``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
 ``max_gens`` (default = 100): maximum generations in the evolutionary process.  
 ``pop_size`` (default = 100): population size that is carried along the evolutionary process.  
