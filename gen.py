@@ -16,25 +16,18 @@ def warn(*args, **kwargs):
 import warnings
 warnings.warn = warn
 def ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, p_mutation=0.98):
-    print('Clusters: {}, Instances: {}, Features: {}'.format(n_clusters, len(X), len(X[0])))
+    print('Dataset: {}, Clusters: {}, Instances: {}, Features: {}'.format(data, n_clusters, len(X), len(X[0])))
     sta = time.time()
     X = StandardScaler().fit_transform(X)
     population = []
     print('Generating initial population')
-    km_pop = int(pop_size*0.75)
-    random_pop = pop_size - km_pop
-    for _ in range(km_pop):
-        individual = {'partition' : km_gen(n_clusters, X)}
-        individual['fitness'] = fitness_value(X, individual['partition'], n_clusters)
-        if individual not in population: population.append(individual)
-    for _ in range(random_pop):
+    for _ in range(pop_size):
         individual = {'partition' : random_gen(n_clusters, X)}     
         individual['fitness'] = fitness_value(X, individual['partition'], n_clusters)
         if individual not in population: population.append(individual)
     best = sorted(population, key=lambda i: i['fitness'], reverse=True)[0]
-    print('Starting genetic process')
+    print('Genetic process running...')
     for i in range(max_gens):
-        print('Generation {}'.format(i+1))
         selected = []
         for _ in range(pop_size): selected.append(binary_tournament(population))
         children = reproduce(selected, pop_size, p_crossover, p_mutation, n_clusters)
@@ -49,8 +42,6 @@ def ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, 
     best['time'] = tim_dif
     print('Optimization finished in {:.2f}s with an objective of {:.4f}'.format(best['time'], best['fitness']))
     best['partition'] = np.array(best['partition'])
-    
-    if not os.path.exists('ecac-out'): os.makedirs('ecac-out')
     d = {}
     d['Clusters'] = n_clusters
     d['Population size'] = pop_size
@@ -59,9 +50,10 @@ def ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, 
     d['Time'] = '{:.6}'.format(best['time'])
     for i in range(len(best['partition'])):
         d['X{}'.format(i+1)] = '{}'.format(best['partition'][i])
-    out_df = pd.DataFrame(d, index=[data])
-    n_3d='{0:03}'.format(n_clusters)
-    gens_3d='{0:03}'.format(max_gens)
-    pops_3d='{0:03}'.format(pop_size)
-    out_df.to_csv('ecac-out/{}_{}_{}_{}.csv'.format(data, n_3d, gens_3d, pops_3d))
+    out = pd.DataFrame(d, index=[data])
+    n_3d = '{0:03}'.format(n_clusters)
+    gens_3d = '{0:03}'.format(max_gens)
+    pops_3d = '{0:03}'.format(pop_size)
+    if not os.path.exists('ecac-out'): os.makedirs('ecac-out')
+    out.to_csv('ecac-out/solution-{}_{}_{}_{}.csv'.format(data, n_3d, gens_3d, pops_3d))
     return best
