@@ -1,10 +1,10 @@
 # ECAC
-Source code of the "Evolutionary Clustering Algorithm using Classifiers" (ECAC), an evolutionary approach to clustering that takes advantage of supervised learning techniques. ECAC generates its initial population using both k-means and random individuals. One-point crossover and neighbor-biased mutation operators enhance the search for solutions while looking to maximize the algorithm's objective function. This function is constructed by three classifiers that take as training labels the assigned groups in an individual's chromosome, and the value returned by it is the average Area under the Curve achieved by the classifiers.
+Source code of the "Evolutionary Clustering Algorithm using Classifiers" (ECAC), an evolutionary approach to clustering that takes advantage of supervised learning techniques. ECAC generates its initial population using random individuals and a one-point crossover and neighbor-biased mutation operators enhance the search for solutions while looking to maximize the algorithm's objective function. This function is constructed by three classifiers that take as training labels the assigned groups in an individual's chromosome, and the value returned by it is the average Area Under the Curve achieved by the classifiers.
 
 ECAC is available in this repository in a Python implementation.
 
 # Algorithm parameters
-``data``: a string with the name of the dataset used for naming the output file.  
+``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
 ``X``: an array containing the dataset features with no header. Each row must belong to one individual with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
 ``max_gens`` (default = 100): maximum generations in the evolutionary process.  
