@@ -7,13 +7,13 @@ ECAC is available in this repository in a Python implementation.
 ``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
 ``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
-``max_gens`` (default = 100): maximum generations in the evolutionary process.  
-``pop_size`` (default = 100): population size that is carried along the evolutionary process.  
+``max_gens`` (default = 2000): maximum generations in the evolutionary process.  
+``pop_size`` (default = 20): population size that is carried along the evolutionary process.  
 ``p_crossover`` (default = 0.95): probability of running the crossover operator.  
 ``p_mutation`` (default = 0.98): probability of running the mutation operator.  
 
 ### Optional data retrieval function
-An additional data retrieval function is included for easy access and generation of the parameters X, clusters, and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features, and the dataset's number of reference classes (n_clusters). The only parameter for this function is a string with a dataset name from the options. To run it on Python and get the information of the *wine* dataset, run these commands in the interface.     
+An additional data retrieval function is included for easy access and generation of the parameters X, clusters and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features, and the dataset's number of reference classes (n_clusters). The only parameter for this function is a string with a dataset name from the options. To run it on Python and get the information of the *wine* dataset, run these commands in the interface.     
 ``>>> from retr import *``  
 ``>>> data, n_clusters, X, _ = data_retrieval('wine')``  
 
@@ -24,6 +24,6 @@ Open your preferred Python interface and follow these commands to generate a clu
 **Important**: You will need to have previously installed some basic data science packages such as numpy, pandas, and scikit-learn.
 
 ``>>> from gen import *``  
-``>>> solution = ecac_run(data, X, n_clusters, max_gens=100, pop_size=100, p_crossover=0.95, p_mutation=0.98)``  
+``>>> solution = ecac_run(data, X, n_clusters, max_gens=2000, pop_size=20, p_crossover=0.95, p_mutation=0.98)``  
 
 Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 100 generations, 100 individuals per population, and probabilities of running the crossover and mutation operators of 0.95 and 0.98. A dictionary is returned containing an array with the partition, the solution's fitness, and the run time for getting the solution, as well as a .csv file is stored in the ``/ecac-out`` path with the test information and output.
