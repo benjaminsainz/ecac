@@ -5,7 +5,6 @@ Héctor Gibrán Ceballos-Cancino, Francisco Javier Cantu-Ortiz
 
 from sklearn.cluster import KMeans
 import numpy as np
-
 def random_gen(n_clusters, X):
     k_set = []
     for i in range(n_clusters): k_set.append(i)
