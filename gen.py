@@ -58,10 +58,10 @@ def ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, 
             if evolutionary_plot:
                 plt.figure(figsize=(12, 8), dpi=200)
                 plt.title('ECAC - Generation {}'.format(i+1), **tifont)
-                plt.xlabel('Proanthocyanidins', **axfont)
-                plt.ylabel('Total Phenols', **axfont)
+                plt.xlabel('Column 1', **axfont)
+                plt.ylabel('Column 2', **axfont)
                 colors = best['partition']
-                plt.scatter(X[:, 9], X[:, 6], c=colors, edgecolor='k', cmap='YlGnBu')
+                plt.scatter(X[:, 0], X[:, 1], c=colors, edgecolor='k', cmap='YlGnBu')
                 plt.tight_layout()
                 if not os.path.exists('figures/{}/{}'.format(data, run+1)):
                     os.makedirs('figures/{}/{}'.format(data, run+1))
