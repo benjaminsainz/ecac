@@ -28,9 +28,9 @@ Open your preferred Python interface and follow these commands to generate a clu
 **Important**: You will need to have previously installed some basic data science packages such as numpy, pandas, and scikit-learn.
 
 ``>>> from gen import *``  
-``>>> ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, runs=10, y=y, log_file=False, evolutionary_plot=False)``  
+``>>> ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, p_mutation=0.98, runs=10, y=y, log_file=False, evolutionary_plot=False)``  
 
-Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 20 individuals per population, 2000 generations, probabilities of running the crossover and mutation operators of 0.95 and 0.98, 10 independent runs, and will compute the adjusted RAND index between the solutions and the provided y array. No log files or evolutionary plots will be exported. A csv file is stored in the ``/ecac-out`` path with the test information and outputs.
+Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 20 individuals per population, 2000 generations, probabilities of running the crossover and mutation operators of 0.95 and 0.98 for 10 independent runs, and will compute the adjusted RAND index between the solutions and the provided y array. No log files or evolutionary plots will be exported. A csv file is stored in the ``/ecac-out`` path with the test information and outputs.
 
 A test.py file is provided for a more straight-forward approach to using the algorithm.
 
