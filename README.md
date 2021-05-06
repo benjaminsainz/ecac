@@ -6,15 +6,15 @@ ECAC is available in this repository in a Python implementation.
 # Algorithm parameters
 ``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
-``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.
-``pop_size`` (default = 20): population size that is carried along the evolutionary process.  
-``max_gens`` (default = 2000): maximum generations in the evolutionary process.  
+``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
+``pop_size`` (default = 20): population size that is carried along the evolutionary process.   
+``max_gens`` (default = 2000): maximum generations in the evolutionary process.   
 ``p_crossover`` (default = 0.95): probability of running the crossover operator.  
 ``p_mutation`` (default = 0.98): probability of running the mutation operator.  
-``runs`` (default = 10): independent runs of the algorithm.
-``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.
-``log_file`` (default = False): creates a csv file with the fitness value of the best individual per generation.
-``evolutionary_plot`` (default = False): creates multiple jpg files with scatter plots of the first two columns from the dataset and their cluster membership.
+``runs`` (default = 10): independent runs of the algorithm.  
+``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.  
+``log_file`` (default = False): creates a csv file with the fitness value of the best individual per generation.  
+``evolutionary_plot`` (default = False): creates multiple jpg files with scatter plots of the first two columns from the dataset and their cluster membership.  
 
 ### Optional data retrieval function
 An additional data retrieval function is included for easy access and generation of the parameters X, clusters and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features, and the dataset's number of reference classes (n_clusters). The only parameter for this function is a string with a dataset name from the options. To run it on Python and get the information of the *wine* dataset, run these commands in the interface.     
