@@ -36,4 +36,3 @@ A test.py file is provided for a more straight-forward approach to using the alg
 
 I really hope ECAC is useful for your data mining tasks,  
 Benjamin  
-a01362640@itesm.mx  
