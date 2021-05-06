@@ -32,8 +32,8 @@ Open your preferred Python interface and follow these commands to generate a clu
 
 Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 20 individuals per population, 2000 generations, probabilities of running the crossover and mutation operators of 0.95 and 0.98 for 10 independent runs, and will compute the adjusted RAND index between the solutions and the provided y array. No log files or evolutionary plots will be exported. A csv file is stored in the ``/ecac-out`` path with the test information and outputs.
 
-A test.py file is provided for a more straight-forward approach to using the algorithm.
+A test.py file is provided for a more straight-forward approach to using the algorithm.  
 
-I really hope the algorithm's useful for your data mining tasks,
-Benjamin
-a01362640@itesm.mx
+I really hope ECAC is useful for your data mining tasks,  
+Benjamin  
+a01362640@itesm.mx  
