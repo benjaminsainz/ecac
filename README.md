@@ -4,26 +4,36 @@ Source code of the "Evolutionary Clustering Algorithm using Classifiers" (ECAC),
 ECAC is available in this repository in a Python implementation.
 
 # Algorithm parameters
-``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
 ``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
-``max_gens`` (default = 2000): maximum generations in the evolutionary process.  
+``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.
 ``pop_size`` (default = 20): population size that is carried along the evolutionary process.  
+``max_gens`` (default = 2000): maximum generations in the evolutionary process.  
 ``p_crossover`` (default = 0.95): probability of running the crossover operator.  
 ``p_mutation`` (default = 0.98): probability of running the mutation operator.  
+``runs`` (default = 10): independent runs of the algorithm.
+``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.
+``log_file`` (default = False): creates a csv file with the fitness value of the best individual per generation.
+``evolutionary_plot`` (default = False): creates multiple jpg files with scatter plots of the first two columns from the dataset and their cluster membership.
 
 ### Optional data retrieval function
 An additional data retrieval function is included for easy access and generation of the parameters X, clusters and data. The function will use the datasets included in the path ``/data`` and returns the data string, the X features, and the dataset's number of reference classes (n_clusters). The only parameter for this function is a string with a dataset name from the options. To run it on Python and get the information of the *wine* dataset, run these commands in the interface.     
 ``>>> from retr import *``  
-``>>> data, n_clusters, X, _ = data_retrieval('wine')``  
+``>>> data, n_clusters, X, y = data_retrieval('wine')``  
 
 The provided datasets in the ``/data`` path (therefore the options to run the data_retrieval function) are breast-tissue, ecoli, forest, glass, iris, knowledge, segment, spambase, transfusion, and wine. Label files are included for every dataset for any desired benchmarking tests.
 
 # Setup and run using Python
-Open your preferred Python interface and follow these commands to generate a clustering using ECAC. To execute it, just import the functions in *gen.py* and run ``ecac_run()`` with all of its parameters. See the example code below, which follows the data, n_clusters, and X variables set previously for the *wine* dataset.  
+Open your preferred Python interface and follow these commands to generate a clustering using ECAC. To execute it, just import the functions in *gen.py* and run ``ecac_run()`` with all of its parameters. See the example code below, which follows the data, n_clusters, X, and y variables set previously for the *wine* dataset.  
 **Important**: You will need to have previously installed some basic data science packages such as numpy, pandas, and scikit-learn.
 
 ``>>> from gen import *``  
-``>>> solution = ecac_run(data, X, n_clusters, max_gens=2000, pop_size=20, p_crossover=0.95, p_mutation=0.98)``  
+``>>> ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, runs=10, y=y, log_file=False, evolutionary_plot=False)``  
 
-Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 100 generations, 100 individuals per population, and probabilities of running the crossover and mutation operators of 0.95 and 0.98. A dictionary is returned containing an array with the partition, the solution's fitness, and the run time for getting the solution, as well as a .csv file is stored in the ``/ecac-out`` path with the test information and output.
+Running these commands will execute ECAC using the wine dataset's features, 3 clusters, 20 individuals per population, 2000 generations, probabilities of running the crossover and mutation operators of 0.95 and 0.98, 10 independent runs, and will compute the adjusted RAND index between the solutions and the provided y array. No log files or evolutionary plots will be exported. A csv file is stored in the ``/ecac-out`` path with the test information and outputs.
+
+A test.py file is provided for a more straight-forward approach to using the algorithm.
+
+I really hope the algorithm's useful for your data mining tasks,
+Benjamin
+a01362640@itesm.mx
