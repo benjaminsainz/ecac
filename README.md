@@ -6,7 +6,7 @@ Source code of the Evolutionary Clustering Algorithm using Classifiers (ECAC), a
 
 ECAC is available in this repository in a Python implementation.
 
-# Algorithm parameters
+# Algorithm hyper-parameters
 ``X``: an array containing the dataset features with no header. Each row must belong to one object with one column per feature.  
 ``n_clusters``: int with the number of desired clusters.  
 ``data``: a string with the name of the dataset used for printing the algorithm initialization and naming the output file.  
