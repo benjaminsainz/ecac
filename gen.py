@@ -40,7 +40,7 @@ def ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, 
                 population.append(individual)
         best = sorted(population, key=lambda k: k['fitness'], reverse=True)[0]
 
-        print('Starting genetic process')
+        print('Starting genetic process...')
         for i in range(max_gens):
             print('Generation {}'.format(i + 1))
             selected = []
@@ -53,7 +53,8 @@ def ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, 
             if children[0]['fitness'] >= best['fitness']:
                 best = children[0]
             population = children
-            fit_log.append((i + 1, best['fitness']))
+            if log_file:
+                fit_log.append((i + 1, best['fitness']))
 
             if evolutionary_plot:
                 plt.figure(figsize=(12, 8), dpi=200)
@@ -90,8 +91,11 @@ def ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, 
         d['Time'] = best['time']
         if y is None:
             d['Adjusted Rand Index'] = np.nan
+            print('No labels provided')
         else:
-            d['Adjusted Rand Index'] = adjusted_rand_score(y, best['partition'])
+            adj_rand_index = adjusted_rand_score(y, best['partition'])
+            d['Adjusted Rand Index'] = adj_rand_index
+            print('Adjusted RAND index: {:.4f}'.format())
         for i in range(len(best['partition'])):
             d['X{}'.format(i + 1)] = '{}'.format(best['partition'][i])
 
