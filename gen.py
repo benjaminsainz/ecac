@@ -95,7 +95,7 @@ def ecac_run(X, n_clusters, data, pop_size=20, max_gens=2000, p_crossover=0.95, 
         else:
             adj_rand_index = adjusted_rand_score(y, best['partition'])
             d['Adjusted Rand Index'] = adj_rand_index
-            print('Adjusted RAND index: {:.4f}'.format())
+            print('Adjusted RAND index: {:.4f}'.format(adj_rand_index))
         for i in range(len(best['partition'])):
             d['X{}'.format(i + 1)] = '{}'.format(best['partition'][i])
 
