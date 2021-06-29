@@ -1,6 +1,8 @@
 """
-@authors: Benjamin Mario Sainz-Tinajero, Andres Eduardo Gutierrez-Rodriguez,
-Héctor Gibrán Ceballos-Cancino, Francisco Javier Cantu-Ortiz
+Authors: Benjamin Mario Sainz-Tinajero, Andres Eduardo Gutierrez-Rodriguez,
+Héctor Gibrán Ceballos-Cancino, and Francisco Javier Cantu-Ortiz.
+Year: 2021.
+https://github.com/benjaminsainz/ecac
 """
 
 from ind import *
