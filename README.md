@@ -39,7 +39,8 @@ A test.py file is provided for a more straight-forward approach to using the alg
 
 I really hope ECAC is useful for your data mining tasks,  
 Benjamin  
-**LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/  
+**LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/   
+**Email:** a01362640@itesm.mx, bm.sainz@gmail.com  
 
 # References
 [1] B. M. Sainz-Tinajero, A. E. Gutierrez-Rodriguez, H. G. Ceballos, and F. J. Cantu-Ortiz, “Evolutionary clustering algorithm using supervised classifiers,” in 2021 IEEE Congress on Evolutionary Computation (CEC). IEEE, 2021.
