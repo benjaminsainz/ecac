@@ -2,7 +2,7 @@
 **Authors:** Benjamin Mario Sainz-Tinajero, Andres Eduardo Gutierrez-Rodriguez, Hector G. Ceballos, Francisco J. Cantu-Ortiz  
 **Paper title:** Evolutionary Clustering Algorithm Using Supervised Classifiers  
 
-Source code of the Evolutionary Clustering Algorithm using Classifiers (ECAC), an evolutionary approach to clustering that takes advantage of supervised learning techniques. ECAC generates its initial population using random individuals and a one-point crossover and neighbor-biased mutation operators enhance the search for solutions while looking to maximize the algorithm's objective function. This function is constructed by three classifiers that take as training labels the assigned groups in an individual's chromosome, and the value returned by it is the average Area Under the Curve achieved by the classifiers.
+Source code of the Evolutionary Clustering Algorithm using Classifiers (ECAC) [1], an evolutionary approach to clustering that takes advantage of supervised learning techniques. ECAC generates its initial population using random individuals and a one-point crossover and neighbor-biased mutation operators enhance the search for solutions while looking to maximize the algorithm's objective function. This function is constructed by three classifiers that take as training labels the assigned groups in an individual's chromosome, and the value returned by it is the average Area Under the Curve achieved by the classifiers.
 
 ECAC is available in this repository in a Python implementation.
 
@@ -42,4 +42,4 @@ Benjamin
 **LinkedIn:** https://www.linkedin.com/in/benjaminmariosainztinajero/  
 
 # References
-B. M. Sainz-Tinajero, A. E. Gutierrez-Rodriguez, H. G. Ceballos, and F. J. Cantu-Ortiz, “Evolutionary clustering algorithm using supervised classifiers,” in 2021 IEEE Congress on Evolutionary Computation (CEC). IEEE, 2021.
+[1] B. M. Sainz-Tinajero, A. E. Gutierrez-Rodriguez, H. G. Ceballos, and F. J. Cantu-Ortiz, “Evolutionary clustering algorithm using supervised classifiers,” in 2021 IEEE Congress on Evolutionary Computation (CEC). IEEE, 2021.
