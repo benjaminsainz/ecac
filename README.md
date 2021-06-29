@@ -16,7 +16,7 @@ ECAC is available in this repository in a Python implementation.
 ``p_mutation`` (default = 0.98): probability of running the mutation operator.  
 ``runs`` (default = 10): independent runs of the algorithm.  
 ``y`` (default = None): one-dimensional array with the ground truth cluster labels if available.  
-``log_file`` (default = False): creates a csv file with the fitness value of the best individual per generation.  
+``log_file`` (default = False): creates a .csv file with the fitness value of the best individual per generation.  
 ``evolutionary_plot`` (default = False): creates multiple .jpg files with scatter plots of the first two columns from the dataset and their cluster membership.  
 
 ### Optional data retrieval function
