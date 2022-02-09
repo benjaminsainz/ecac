@@ -47,8 +47,8 @@ def point_mutation(ind, rate, n_clusters):
     flag = False
     while flag is False:
         child = ind.copy()
-        j = np.random.randint(len(ind)+1)
-        child[j] = ind[j-1]
+        j = np.random.randint(len(ind)-1)
+        child[j] = ind[j+1]
         flag = True
         for k in k_set: 
             if k not in child:
